@@ -260,7 +260,7 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 
 ## 4.应用授权
 
-分商城 web 管理端地址：https://open.fanbook.mobi/mp/138519745866498048/368331042878263296/shop-manage-pc/
+积分商城 web 管理端地址：https://open.fanbook.mobi/mp/138519745866498048/368331042878263296/shop-manage-pc/
 
 第三方机器人接入积分商城开放接口后，每个服务器都需要单独申请授权后，才允许操作对应服务器的相关接口。
 
