@@ -28,7 +28,7 @@ curl --request POST 'http://localhost:8052/api/core/open/modifyUserPoint?random=
 -- 签名拼接后字符串
 di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Timestamp=1664250286491&random=test-params&requestBody={"bizId":"zw0chebvkt","fbLongId":173022860380475392,"guildId":357042844231282688,"point":666,"remark":"天梯第一名, 奖励666分"}&di4uep1ed5i5m48zhrcm
 
--- 加密后的签名
+-- MD5加密后的签名
 054f69f3e62e8835052ef593c1fa9df8
 ```
 
