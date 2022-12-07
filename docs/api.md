@@ -256,7 +256,64 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
   ]
 }
 ```
+### 3.4.根据bizId回溯积分操作记录 
 
+**接口地址**:`/api/core/open/findPointRecord`
+
+**请求方式**:`GET`
+
+**请求数据类型:** `application/json`
+
+**响应数据类型:** `application/json`
+
+**接口描述**: `根据BizId查询对应的操作记录；如果返回空，则代表该bizId未使用`
+
+**请求参数**:
+
+
+| 参数名称 | 参数说明 | in    | 是否必须 | 数据类型 |
+| -------- | -------- | ----- | -------- | -------- |
+|bizId|修改积分的事务id|query|false|string|
+
+
+**响应状态**:
+
+
+| 状态码 | 说明 | schema |
+| -------- | -------- | ----- | 
+|200|OK|ResponseResult«修改用户积分»|
+|401|Unauthorized||
+|403|Forbidden||
+|404|Not Found||
+
+
+**响应参数**:
+
+
+| 参数名称 | 参数说明 | 类型 |
+| -------- | -------- | ----- |
+|code||integer(int32)|integer(int32)|
+|data||修改用户积分|修改用户积分|
+|&emsp;&emsp;bizId|添加积分的事务id;可以使用比如订单id或者其他随机字符，用于比对每条积分记录的来源;字符长度小于100|string|
+|&emsp;&emsp;fbLongId|fb用户长id|integer(int64)|
+|&emsp;&emsp;point|用户积分数;数值范围[-9999, -1] ~ [1, 9999]|integer(int32)|
+|&emsp;&emsp;remark|添加积分备注;字符长度小于100|string|
+|msg||string|
+
+
+**响应示例**:
+```javascript
+{
+	"code": 0,
+	"data": {
+    "bizId": "vov0aar2lt",
+    "fbLongId": 173022860380475392,
+    "point": -666,
+    "remark": "天梯倒数第一名"
+	},
+	"msg": ""
+}
+```
 
 ## 4.应用授权
 
