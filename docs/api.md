@@ -256,7 +256,7 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
   ]
 }
 ```
-### 3.4.根据bizId回溯积分操作记录 
+### 3.4 根据bizId回溯积分操作记录 
 
 **接口地址**:`/api/core/open/findPointRecord`
 
