@@ -304,14 +304,14 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 **响应示例**:
 ```javascript
 {
-	"code": 0,
-	"data": {
+  "code": 0,
+  "data": {
     "bizId": "vov0aar2lt",
     "fbLongId": 173022860380475392,
     "point": -666,
     "remark": "天梯倒数第一名"
-	},
-	"msg": ""
+  },
+  "msg": ""
 }
 ```
 
