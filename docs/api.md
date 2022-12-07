@@ -97,7 +97,7 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 
 **响应数据类型:** `application/json`
 
-**接口描述:** `对用户的积分进行加减；如果用户积分不足，则不会扣减用户积分`
+**接口描述:** `对用户的积分进行加减；如果用户积分不足，则不会扣减用户积分;注意，每个bizId必须保证全局唯一`
 
 **请求示例:**
 
@@ -116,7 +116,7 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 | 参数名称 | 参数说明                                                                                            | in   | 是否必须 | 数据类型                 |
 | -------- | --------------------------------------------------------------------------------------------------- | ---- | -------- | ------------------------ |
 | request  | request                                                                                             | body | TRUE     | 修改用户积分请求参数模型 |
-| bizId    | 添加积分的事务 id;可以使用比如订单 id 或者其他随机字符，用于比对每条积分记录的来源;字符长度小于 100 |      | TRUE     | string                   |
+| bizId    | 添加积分的事务 id;可以使用比如订单id或者类似雪花算法生成的唯一字符串，用于比对每条积分记录的来源;字符长度小于 100 |      | TRUE     | string                   |
 | fbLongId | fb 用户长 id                                                                                        | body | TRUE     | integer(int64)           |
 | guildId  | FB 服务器 id                                                                                        |      | TRUE     | integer(int64)           |
 | point    | 用户积分数;数值范围[-9999, -1] ~ [1, 9999]                                                          |      | TRUE     | integer(int32)           |
@@ -174,7 +174,7 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 
 **响应数据类型:** `application/json`
 
-**接口描述:** `可以批量对用户的积分进行加减；`
+**接口描述:** `可以批量对用户的积分进行加减；注意，每个bizId必须保证全局唯一`
 
 **请求示例:**
 
@@ -205,7 +205,7 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 | request  | request                                                                                             | body | TRUE     | 批量修改用户积分请求模型 |
 | guildId  | FB 服务器 id                                                                                        |      | TRUE     | integer(int64)           |
 | pointList| 用户的修改积分列表;集合大小是[1, 1000]                                                               |      | TRUE     | array	修改用户积分的集合           |
-| bizId    | 添加积分的事务 id;可以使用比如订单 id 或者其他随机字符，用于比对每条积分记录的来源;字符长度小于 100 |     | TRUE     | string                   |
+| bizId    | 添加积分的事务 id;可以使用比如订单id或类似雪花算法生成的唯一字符串;字符长度小于 100 |     | TRUE     | string                   |
 | fbLongId | fb 用户长 id                                                                                        | body | TRUE     | integer(int64)           |
 | point    | 用户积分数;数值范围[-9999, -1] ~ [1, 9999]                                                          |      | TRUE     | integer(int32)           |
 | remark   | 添加积分备注;字符长度小于 100                                                                       |      | TRUE     | string                   |
@@ -294,10 +294,10 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 | -------- | -------- | ----- |
 |code||integer(int32)|integer(int32)|
 |data||修改用户积分|修改用户积分|
-|&emsp;&emsp;bizId|添加积分的事务id;可以使用比如订单id或者其他随机字符，用于比对每条积分记录的来源;字符长度小于100|string|
-|&emsp;&emsp;fbLongId|fb用户长id|integer(int64)|
-|&emsp;&emsp;point|用户积分数;数值范围[-9999, -1] ~ [1, 9999]|integer(int32)|
-|&emsp;&emsp;remark|添加积分备注;字符长度小于100|string|
+|bizId|添加积分的事务id;可以使用比如订单id或者其他随机字符，用于比对每条积分记录的来源;字符长度小于100|string|
+|fbLongId|fb用户长id|integer(int64)|
+|point|用户积分数;数值范围[-9999, -1] ~ [1, 9999]|integer(int32)|
+|remark|添加积分备注;字符长度小于100|string|
 |msg||string|
 
 
