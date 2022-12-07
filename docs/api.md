@@ -294,7 +294,7 @@ di4uep1ed5i5m48zhrcm&AppKey=esdx8ol13uelo6enblwh&Nonce=z00wu1fzglfyqzk1tol5&Time
 | -------- | -------- | ----- |
 |code||integer(int32)|integer(int32)|
 |data||修改用户积分|修改用户积分|
-|bizId|添加积分的事务id;可以使用比如订单id或者其他随机字符，用于比对每条积分记录的来源;字符长度小于100|string|
+|bizId|添加积分的事务id;可以使用比如订单id或者类似雪花算法生成的唯一随机字符，用于比对每条积分记录的来源;字符长度小于100|string|
 |fbLongId|fb用户长id|integer(int64)|
 |point|用户积分数;数值范围[-9999, -1] ~ [1, 9999]|integer(int32)|
 |remark|添加积分备注;字符长度小于100|string|
